@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import './reset.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
