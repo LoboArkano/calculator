@@ -4,7 +4,7 @@ import randomKey from '../functions/random';
 
 const buttons = {
   line1: ['AC', '+/-', '%', '÷'],
-  line2: ['7', '8', '9', 'X'],
+  line2: ['7', '8', '9', 'x'],
   line3: ['4', '5', '6', '-'],
   line4: ['1', '2', '3', '+'],
   line5: ['0', '.', '='],
@@ -12,7 +12,7 @@ const buttons = {
 
 const ButtonPanel = () => (
   Object.keys(buttons).map(line => (
-    <div key={randomKey()}>
+    <div className="button_panel" key={randomKey()}>
       {
         buttons[line].map(item => (
           <Button key={randomKey()} name={item} />
