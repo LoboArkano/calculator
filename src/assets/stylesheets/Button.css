@@ -1,0 +1,23 @@
+.large-btn {
+  grid-column: span 2;
+}
+
+.btn,
+.large-btn {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.btn:hover,
+.large-btn:hover {
+  -webkit-filter: contrast(0.75);
+  filter: contrast(0.75);
+}
+
+.orange-bg {
+  background-color: #f5913e;
+}
+
+.lg-bg {
+  background-color: #e0e0e0;
+}

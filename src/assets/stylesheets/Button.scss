@@ -1,0 +1,23 @@
+@import '_variables';
+
+.large-btn {
+  grid-column: span 2;
+}
+
+.btn,
+.large-btn {
+  cursor: pointer;
+  font-size: 2rem;
+
+  &:hover {
+    filter: contrast(0.75);
+  }
+}
+
+.orange-bg {
+  background-color: $orange;
+}
+
+.lg-bg {
+  background-color: $lightGray;
+}

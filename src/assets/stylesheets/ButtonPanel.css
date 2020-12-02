@@ -1,0 +1,10 @@
+.button_panel {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 80px;
+  grid-template-rows: 80px;
+  gap: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
