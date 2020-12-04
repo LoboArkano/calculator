@@ -10,12 +10,12 @@ const buttons = {
   line5: ['0', '.', '='],
 };
 
-const ButtonPanel = () => (
+const ButtonPanel = ({ clickHandler }) => (
   Object.keys(buttons).map(line => (
     <div className="button_panel" key={randomKey()}>
       {
         buttons[line].map(item => (
-          <Button key={randomKey()} name={item} />
+          <Button key={randomKey()} name={item} handleClick={clickHandler} />
         ))
       }
     </div>
