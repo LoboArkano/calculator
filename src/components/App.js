@@ -1,42 +1,26 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = () => {
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
 
-  handleClick(buttonName) {
-    const newState = calculate(this.state, buttonName);
-    this.setState(() => ({
-      total: newState.total,
-      next: newState.next,
-      operation: newState.operation,
-    }));
-  }
+  const handleClick = useCallback(buttonName => {
+    const newState = calculate({ total, next, operation }, buttonName);
+    setTotal(newState.total);
+    setNext(newState.next);
+    setOperation(newState.operation);
+  }, [total, next, operation]);
 
-  render() {
-    let { total, next, operation } = this.state;
-
-    total = total || undefined;
-    next = next || '';
-    operation = operation || '';
-
-    return (
-      <>
-        <Display result={total != null ? `${total}${operation}${next}` : total} />
-        <ButtonPanel clickHandler={this.handleClick} />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <Display result={total != null ? `${total}${operation || ''}${next || ''}` : undefined} />
+      <ButtonPanel clickHandler={handleClick} />
+    </>
+  );
+};
 
 export default App;
