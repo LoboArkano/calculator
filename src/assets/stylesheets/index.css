@@ -28,6 +28,7 @@ body {
   background-color: #858694;
   padding-right: 2%;
   font-size: 2.6rem;
+  overflow: hidden;
 }
 
 .button_panel {
