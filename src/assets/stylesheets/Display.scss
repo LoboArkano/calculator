@@ -1,0 +1,14 @@
+@import '_variables';
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 80px;
+  color: $white;
+  background-color: $darkGray;
+  padding-right: 2%;
+  font-size: 2.6rem;
+  overflow: hidden;
+}
